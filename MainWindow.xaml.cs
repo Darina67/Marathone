@@ -60,7 +60,7 @@ namespace Marathone
                 back.Visibility = Visibility.Hidden;
         }
 
-       //коммент
+       
             
         
         private void back_Click(object sender, RoutedEventArgs e)
