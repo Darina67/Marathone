@@ -1,0 +1,24 @@
+﻿<Page x:Class="Marathone.FirstPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Marathone"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FirstPage" Height="315" Width="900">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="18*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="OldRunner" Grid.Column="1" Width="250" Height="90" Content="Я участвовал ранее" HorizontalAlignment="Center" VerticalAlignment="Center" Click="OldRunner_Click" FontSize="25"></Button>
+        <Button x:Name="NewRunner" Grid.Column="1" Grid.Row="1" Width="250" Height="90" Content="Я новый участник" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Click="NewRunner_Click"></Button>
+    </Grid>
+</Page>
