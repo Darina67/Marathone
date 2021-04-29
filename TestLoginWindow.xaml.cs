@@ -10,29 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Marathone
 {
     /// <summary>
-    /// Логика взаимодействия для FirstPage.xaml
+    /// Логика взаимодействия для TestLoginWindow.xaml
     /// </summary>
-    public partial class FirstPage : Page
+    public partial class TestLoginWindow : Window
     {
-        public FirstPage()
+        public TestLoginWindow()
         {
             InitializeComponent();
-        }
-
-        private void OldRunner_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new LoginPage());
-        }
-
-        private void NewRunner_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new RegistratePage());
         }
     }
 }

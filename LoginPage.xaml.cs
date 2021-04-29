@@ -16,23 +16,26 @@ using System.Windows.Shapes;
 namespace Marathone
 {
     /// <summary>
-    /// Логика взаимодействия для FirstPage.xaml
+    /// Логика взаимодействия для LoginPage.xaml
     /// </summary>
-    public partial class FirstPage : Page
+    public partial class LoginPage : Page
     {
-        public FirstPage()
+        public LoginPage()
         {
             InitializeComponent();
         }
 
-        private void OldRunner_Click(object sender, RoutedEventArgs e)
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new LoginPage());
+            TestLoginForm frm = new TestLoginForm();
+            frm.ShowDialog();
+            
         }
 
-        private void NewRunner_Click(object sender, RoutedEventArgs e)
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new RegistratePage());
+            email.Clear();
+            password.Clear();
         }
     }
 }
