@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Marathone"
         mc:Ignorable="d"
-        Title="Marat" Height="500" Width="900" >
+        Title="Marat" MaxHeight="500" MaxWidth="900" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,7 +18,7 @@
             <RowDefinition Height="47*"/>
         </Grid.RowDefinitions>
         <Button x:Name="back" Content="Назад" HorizontalAlignment="Right" VerticalAlignment="Center" Click="back_Click" Grid.Row="0" Width="175" Background="WhiteSmoke" Panel.ZIndex="1" Height="32" Margin="10" FontSize="15"></Button>
-        <Frame Grid.Row="3" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"  Grid.RowSpan="2"></Frame>
+        <Frame Grid.Row="3" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"    Grid.RowSpan="2"></Frame>
         <Grid Background="Gray" Grid.Row="0"   />
         <Label Content="Marathon skills 2016" Foreground="White"  HorizontalAlignment="Center" FontSize="26"  Width="247"   ></Label>
         <Grid Background="Gray" Grid.Row="1" ></Grid>
