@@ -57,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutMarathonPage1.xaml.cs">
+      <DependentUpon>AboutMarathonPage1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InteracriveMap.xaml.cs">
       <DependentUpon>InteracriveMap.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,10 @@
     <Compile Include="TestLoginWindow.xaml.cs">
       <DependentUpon>TestLoginWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AboutMarathonPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -165,6 +172,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DTlesTBOsmw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1024px-New_York_marathon_Verrazano_bridge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1491221438591283853.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HCM2016-sykesport-27.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="content_________2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

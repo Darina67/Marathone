@@ -49,5 +49,10 @@ namespace Marathone
         {
             MessageBox.Show("Особенности: \n -Финиш ","Финиш");
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new AboutMarathonPage1());
+        }
     }
 }
