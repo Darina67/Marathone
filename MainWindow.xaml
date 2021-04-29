@@ -26,6 +26,7 @@
         <Grid Background="Gray" Grid.Row="2" ></Grid>
         <Label FontStyle="Italic" Content="среда 21 октября 2016" Grid.Row="2" HorizontalAlignment="Center" Width="137"  ></Label>
         <Grid Grid.Row="4" Background="Gray"></Grid>
-        <Label Content="18 дней 8 часов и17 минут до старта марафона!" Foreground="White" Grid.Row="4" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center"></Label>
+        <Label x:Name="RealTime"   Foreground="White" Grid.Row="4" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center"></Label>
+        <Label Content="Текущее время:"   Foreground="White" Grid.Row="4" HorizontalAlignment="Left" FontSize="16" VerticalAlignment="Center"></Label>
     </Grid>
 </Window>

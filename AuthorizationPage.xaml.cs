@@ -27,7 +27,7 @@ namespace Marathone
 
         private void BtnThird_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new InteracriveMap());
         }
 
         private void BtnSecond_Click(object sender, RoutedEventArgs e)

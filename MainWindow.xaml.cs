@@ -25,6 +25,14 @@ namespace Marathone
             InitializeComponent();
             Manager.MainFrame = MainFrame;
             MainFrame.Navigate(new AuthorizationPage());
+            
+                var timer = new System.Windows.Threading.DispatcherTimer();
+                timer.Interval = new TimeSpan(0, 0, 1);
+                timer.IsEnabled = true;
+                timer.Tick += (o, t) => { RealTime.Content =  DateTime.Now.ToString(); };
+                timer.Start();
+            
+
         }
 
         private void BtnFirst_Click(object sender, RoutedEventArgs e)
@@ -60,9 +68,10 @@ namespace Marathone
                 back.Visibility = Visibility.Hidden;
         }
 
-       
-            
+
         
+        
+
         private void back_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.GoBack();

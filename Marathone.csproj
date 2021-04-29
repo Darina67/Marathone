@@ -57,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="InteracriveMap.xaml.cs">
+      <DependentUpon>InteracriveMap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FirstPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InteracriveMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,6 +147,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="poyXUvcxQ5E.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="72L7qpAomWo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Y-HTk1pW6Ao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rxRHhUCpfg4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1GYLbZ3s5Ug.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DTlesTBOsmw.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
