@@ -18,7 +18,7 @@ namespace Marathone
     /// <summary>
     /// Логика взаимодействия для RegistratePage.xaml
     /// </summary>
-    /// Сделано на ноуте Дарины в 9:06
+    /// Сделано на ноуте Дарины в 9:06 в апреле
     public partial class RegistratePage : Page
     {
         public RegistratePage()
