@@ -22,7 +22,7 @@
         <Grid Background="Gray" Grid.Row="0"   />
         <Label Content="Marathon skills 2016" Foreground="White"  HorizontalAlignment="Center" FontSize="26"  Width="247"   ></Label>
         <Grid Background="Gray" Grid.Row="1" ></Grid>
-        <Label Content="Москва, Россия" Grid.Row="1" HorizontalAlignment="Center"  Width="95" FontStyle="Italic" Grid.RowSpan="2" ></Label>
+        <Label Content="Хельсинки, Финляндия" Grid.Row="1" HorizontalAlignment="Center"  Width="141" FontStyle="Italic" Grid.RowSpan="2"  ></Label>
         <Grid Background="Gray" Grid.Row="2" ></Grid>
         <Label FontStyle="Italic" Content="среда 21 октября 2016" Grid.Row="2" HorizontalAlignment="Center" Width="137"  ></Label>
         <Grid Grid.Row="4" Background="Gray"></Grid>

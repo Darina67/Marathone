@@ -24,6 +24,7 @@ namespace Marathone
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Manager.MainFrame.Navigate(new RunnerPage());
             Close();
         }
 

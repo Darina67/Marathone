@@ -60,14 +60,29 @@
     <Compile Include="AboutMarathonPage1.xaml.cs">
       <DependentUpon>AboutMarathonPage1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BMIPage.xaml.cs">
+      <DependentUpon>BMIPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InteracriveMap.xaml.cs">
       <DependentUpon>InteracriveMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PersonalPage.xaml.cs">
+      <DependentUpon>PersonalPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegistratePage.xaml.cs">
       <DependentUpon>RegistratePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RunnerPage.xaml.cs">
+      <DependentUpon>RunnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorPage.xaml.cs">
+      <DependentUpon>SponsorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorPage2.xaml.cs">
+      <DependentUpon>SponsorPage2.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestLoginForm.cs">
       <SubType>Form</SubType>
@@ -83,6 +98,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AuthorizationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BMIPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,7 +135,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PersonalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegistratePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RunnerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SponsorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SponsorPage2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +222,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="content_________2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="extraslim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="slim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bmi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="c2716d2fe4918045cad0e4d726b09f78.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
