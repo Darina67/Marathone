@@ -54,5 +54,15 @@ namespace Marathone
         {
             Manager.MainFrame.Navigate(new AboutMarathonPage1());
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new SponsorPage());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new BMIPage());
+        }
     }
 }

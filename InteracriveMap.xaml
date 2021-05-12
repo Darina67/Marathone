@@ -18,8 +18,8 @@
         <Label Content="Интерактивная карта марафона" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="396,20,0,0"/>
         <Label Content="Посмотреть другую информацию:" FontSize="15" HorizontalAlignment="Center" Foreground="Gray" VerticalAlignment="Top" Margin="409,68,145,0"/>
         <Button Click="Button_Click" Content="Узнать о марафоне" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Height="Auto" FontSize="19" Margin="531,112,0,0"/>
-        <Button Content="Спонсоры марафона" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Height="Auto" FontSize="19" Margin="531,162,0,0"/>
-        <Button Content="BMI калькулятор" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Height="Auto" FontSize="19" Margin="531,210,0,0" />
+        <Button Click="Button_Click_1" Content="Спонсоры марафона" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Height="Auto" FontSize="19" Margin="531,162,0,0"/>
+        <Button Content="BMI калькулятор" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Height="Auto" FontSize="19" Click="Button_Click_2" Margin="531,210,0,0" />
 
     </Grid>
 </Page>
