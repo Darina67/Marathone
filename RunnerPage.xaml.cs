@@ -23,6 +23,7 @@ namespace Marathone
         public RunnerPage()
         {
             InitializeComponent();
+            DGridRunners.ItemsSource = marathoneEntities.GetContext().runners.ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

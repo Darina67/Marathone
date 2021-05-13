@@ -6,9 +6,12 @@
       xmlns:local="clr-namespace:Marathone"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SponsorPage2">
+      Title="SponsorPage2" Height="330" Width="900">
 
     <Grid>
-        
+        <Label Content="Внесите пожертвование" FontSize="45" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
+        <Image Margin="10,75,680,56" Source="coin_PNG36944.png" Stretch="Fill" MouseDown="Image_MouseDown"/>
+        <Label x:Name="Summa" FontSize="83" Content="Label" HorizontalAlignment="Left" Margin="266,128,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

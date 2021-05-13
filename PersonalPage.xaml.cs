@@ -23,6 +23,20 @@ namespace Marathone
         public PersonalPage()
         {
             InitializeComponent();
+            DGridRunners.ItemsSource = marathoneEntities.GetContext().runners.ToList();
+            DGridStaff.ItemsSource = marathoneEntities.GetContext().staffs.ToList();
+        }
+
+        
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Редактирование бегунов временно не работает", "Произогла ошибка");
+        }
+
+        private void BtnEdit2_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Редактирование персонала временно не работает", "Произогла ошибка");
         }
     }
 }

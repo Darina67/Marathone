@@ -11,12 +11,13 @@
     <Grid>
         <Label Content="Страница бегуна" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"  VerticalAlignment="Top"/>
         <Label FontStyle="Italic" Content="Познакомьтесь с соперниками" HorizontalAlignment="Center" Margin="0,41,0,0" FontSize="25"  VerticalAlignment="Top"/>
-        <DataGrid x:Name="DGridRunners"  HorizontalAlignment="Left" Height="243" Margin="0,87,0,0" VerticalAlignment="Top" Width="900">
+        <DataGrid x:Name="DGridRunners" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Height="243" Margin="0,87,0,0" VerticalAlignment="Top" Width="900">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Фото" Width="*"/>
-                <DataGridTextColumn Header="ФИО" Width="*"/>
-                <DataGridTextColumn Header="Почта" Width="*"/>
-                <DataGridTextColumn Header="Телефон" Width="*"/>
+                <DataGridTextColumn Header="Фото" Binding="{Binding Photo}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="*"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}" Width="*"/>
+                <DataGridTextColumn Header="Страна" Binding="{Binding Country}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Контакты" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="150" Height="40" FontSize="19" Click="Button_Click" Foreground="White" Background="Gray" Margin="0,26,25,0"/>

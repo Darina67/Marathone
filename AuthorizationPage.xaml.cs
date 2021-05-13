@@ -32,7 +32,7 @@ namespace Marathone
 
         private void BtnSecond_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new SponsorPage());
         }
 
         private void BtnFirst_Click(object sender, RoutedEventArgs e)
