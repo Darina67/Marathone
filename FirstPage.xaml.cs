@@ -32,7 +32,7 @@ namespace Marathone
 
         private void NewRunner_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new RegistratePage());
+            Manager.MainFrame.Navigate(new RegistratePage(null));
         }
     }
 }

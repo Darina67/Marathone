@@ -30,11 +30,13 @@ namespace Marathone
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Manager.MainFrame.Navigate(new PersonalPage());
             Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Manager.MainFrame.Navigate(new SponsorPage2());
             Close();
         }
     }

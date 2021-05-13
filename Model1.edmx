@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище marathoneModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Donate">
+          <Key>
+            <PropertyRef Name="IdOfDonate" />
+          </Key>
+          <Property Name="IdOfDonate" Type="int" Nullable="false" />
+          <Property Name="Sponsor" Type="int" />
+          <Property Name="Runner" Type="int" />
+          <Property Name="Donate_Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="Donate_RUB" Type="int" />
+        </EntityType>
+        <EntityType Name="runner">
+          <Key>
+            <PropertyRef Name="IdOfRunner" />
+          </Key>
+          <Property Name="IdOfRunner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date_of_Birthday" Type="date" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="1" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sex">
+          <Key>
+            <PropertyRef Name="FirsLitera" />
+          </Key>
+          <Property Name="FirsLitera" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sponsor">
+          <Key>
+            <PropertyRef Name="IdOfSponsor" />
+          </Key>
+          <Property Name="IdOfSponsor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="IdOfStaff" />
+          </Key>
+          <Property Name="IdOfStaff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="vacancy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Donate_runner">
+          <End Role="runner" Type="Self.runner" Multiplicity="0..1" />
+          <End Role="Donate" Type="Self.Donate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="runner">
+              <PropertyRef Name="IdOfRunner" />
+            </Principal>
+            <Dependent Role="Donate">
+              <PropertyRef Name="Runner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donate_sponsor">
+          <End Role="sponsor" Type="Self.sponsor" Multiplicity="0..1" />
+          <End Role="Donate" Type="Self.Donate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sponsor">
+              <PropertyRef Name="IdOfSponsor" />
+            </Principal>
+            <Dependent Role="Donate">
+              <PropertyRef Name="Sponsor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_runner_Sex">
+          <End Role="Sex" Type="Self.Sex" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="runner" Type="Self.runner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sex">
+              <PropertyRef Name="FirsLitera" />
+            </Principal>
+            <Dependent Role="runner">
+              <PropertyRef Name="Sex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище marathoneModelContainer">
+          <EntitySet Name="Donate" EntityType="Self.Donate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="runner" EntityType="Self.runner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sex" EntityType="Self.Sex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sponsor" EntityType="Self.sponsor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Donate_runner" Association="Self.FK_Donate_runner">
+            <End Role="runner" EntitySet="runner" />
+            <End Role="Donate" EntitySet="Donate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donate_sponsor" Association="Self.FK_Donate_sponsor">
+            <End Role="sponsor" EntitySet="sponsor" />
+            <End Role="Donate" EntitySet="Donate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_runner_Sex" Association="Self.FK_runner_Sex">
+            <End Role="Sex" EntitySet="Sex" />
+            <End Role="runner" EntitySet="runner" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="marathoneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Donate">
+          <Key>
+            <PropertyRef Name="IdOfDonate" />
+          </Key>
+          <Property Name="IdOfDonate" Type="Int32" Nullable="false" />
+          <Property Name="Sponsor" Type="Int32" />
+          <Property Name="Runner" Type="Int32" />
+          <Property Name="Donate_Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Donate_RUB" Type="Int32" />
+          <NavigationProperty Name="runner1" Relationship="Self.FK_Donate_runner" FromRole="Donate" ToRole="runner" />
+          <NavigationProperty Name="sponsor1" Relationship="Self.FK_Donate_sponsor" FromRole="Donate" ToRole="sponsor" />
+        </EntityType>
+        <EntityType Name="runner">
+          <Key>
+            <PropertyRef Name="IdOfRunner" />
+          </Key>
+          <Property Name="IdOfRunner" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date_of_Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Donates" Relationship="Self.FK_Donate_runner" FromRole="runner" ToRole="Donate" />
+          <NavigationProperty Name="Sex1" Relationship="Self.FK_runner_Sex" FromRole="runner" ToRole="Sex" />
+        </EntityType>
+        <EntityType Name="Sex">
+          <Key>
+            <PropertyRef Name="FirsLitera" />
+          </Key>
+          <Property Name="FirsLitera" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="runners" Relationship="Self.FK_runner_Sex" FromRole="Sex" ToRole="runner" />
+        </EntityType>
+        <EntityType Name="sponsor">
+          <Key>
+            <PropertyRef Name="IdOfSponsor" />
+          </Key>
+          <Property Name="IdOfSponsor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Donates" Relationship="Self.FK_Donate_sponsor" FromRole="sponsor" ToRole="Donate" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="IdOfStaff" />
+          </Key>
+          <Property Name="IdOfStaff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vacancy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Donate_runner">
+          <End Role="runner" Type="Self.runner" Multiplicity="0..1" />
+          <End Role="Donate" Type="Self.Donate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="runner">
+              <PropertyRef Name="IdOfRunner" />
+            </Principal>
+            <Dependent Role="Donate">
+              <PropertyRef Name="Runner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donate_sponsor">
+          <End Role="sponsor" Type="Self.sponsor" Multiplicity="0..1" />
+          <End Role="Donate" Type="Self.Donate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sponsor">
+              <PropertyRef Name="IdOfSponsor" />
+            </Principal>
+            <Dependent Role="Donate">
+              <PropertyRef Name="Sponsor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_runner_Sex">
+          <End Role="Sex" Type="Self.Sex" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="runner" Type="Self.runner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sex">
+              <PropertyRef Name="FirsLitera" />
+            </Principal>
+            <Dependent Role="runner">
+              <PropertyRef Name="Sex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="marathoneEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Donates" EntityType="Self.Donate" />
+          <EntitySet Name="runners" EntityType="Self.runner" />
+          <EntitySet Name="Sexes" EntityType="Self.Sex" />
+          <EntitySet Name="sponsors" EntityType="Self.sponsor" />
+          <EntitySet Name="staffs" EntityType="Self.staff" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Donate_runner" Association="Self.FK_Donate_runner">
+            <End Role="runner" EntitySet="runners" />
+            <End Role="Donate" EntitySet="Donates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donate_sponsor" Association="Self.FK_Donate_sponsor">
+            <End Role="sponsor" EntitySet="sponsors" />
+            <End Role="Donate" EntitySet="Donates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_runner_Sex" Association="Self.FK_runner_Sex">
+            <End Role="Sex" EntitySet="Sexes" />
+            <End Role="runner" EntitySet="runners" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище marathoneModelContainer" CdmEntityContainer="marathoneEntities">
+          <EntitySetMapping Name="Donates">
+            <EntityTypeMapping TypeName="marathoneModel.Donate">
+              <MappingFragment StoreEntitySet="Donate">
+                <ScalarProperty Name="IdOfDonate" ColumnName="IdOfDonate" />
+                <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+                <ScalarProperty Name="Runner" ColumnName="Runner" />
+                <ScalarProperty Name="Donate_Company" ColumnName="Donate_Company" />
+                <ScalarProperty Name="Donate_RUB" ColumnName="Donate_RUB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="runners">
+            <EntityTypeMapping TypeName="marathoneModel.runner">
+              <MappingFragment StoreEntitySet="runner">
+                <ScalarProperty Name="IdOfRunner" ColumnName="IdOfRunner" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Date_of_Birthday" ColumnName="Date_of_Birthday" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sexes">
+            <EntityTypeMapping TypeName="marathoneModel.Sex">
+              <MappingFragment StoreEntitySet="Sex">
+                <ScalarProperty Name="FirsLitera" ColumnName="FirsLitera" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sponsors">
+            <EntityTypeMapping TypeName="marathoneModel.sponsor">
+              <MappingFragment StoreEntitySet="sponsor">
+                <ScalarProperty Name="IdOfSponsor" ColumnName="IdOfSponsor" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="staffs">
+            <EntityTypeMapping TypeName="marathoneModel.staff">
+              <MappingFragment StoreEntitySet="staff">
+                <ScalarProperty Name="IdOfStaff" ColumnName="IdOfStaff" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="vacancy" ColumnName="vacancy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="marathoneModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

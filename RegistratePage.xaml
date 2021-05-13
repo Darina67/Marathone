@@ -25,21 +25,22 @@
                 <ColumnDefinition Width="445*"/>
                 <ColumnDefinition Width="437*"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="email"  FontSize="40" VerticalAlignment="Center" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="2" Grid.Column="1" FontStyle="Italic"  />
-            <TextBox x:Name="password" FontStyle="Italic" FontSize="40" VerticalAlignment="Center" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="3" Grid.Column="1"/>
+            <TextBox x:Name="email" Text="{Binding Email}" FontSize="40" VerticalAlignment="Center" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="2" Grid.Column="1" FontStyle="Italic"  />
+            <TextBox x:Name="password" Text="{Binding Password}" FontStyle="Italic" FontSize="40" VerticalAlignment="Center" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="3" Grid.Column="1"/>
             <TextBox x:Name="password_repeat" FontStyle="Italic"  VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="4" Grid.Column="1" />
-            <TextBox x:Name="name" FontStyle="Italic" VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="5" Grid.Column="1" />
-            <TextBox x:Name="surname" FontStyle="Italic" VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="6" Grid.Column="1" />
-            <TextBox x:Name="sex" FontStyle="Italic" VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="7" Grid.Column="1" />
-            <DatePicker x:Name="dateofbirthday" Grid.Column="1" Grid.Row="8" Width="Auto" Height="Auto" FontSize="40"></DatePicker>
-            <TextBox x:Name="country" FontStyle="Italic"  VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="9" Grid.Column="1" />
+            <TextBox x:Name="name" Text="{Binding Name}" FontStyle="Italic" VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="5" Grid.Column="1" PreviewTextInput="name_PreviewTextInput" />
+            <TextBox x:Name="surname" Text="{Binding Surname}" FontStyle="Italic" VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="6" Grid.Column="1" PreviewTextInput="surname_PreviewTextInput" />
+            <TextBox MaxLength="6" x:Name="sex" Text="{Binding Sex}" FontStyle="Italic" VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="7" Grid.Column="1" PreviewTextInput="sex_PreviewTextInput" />
+            <DatePicker x:Name="dateofbirthday" Text="{Binding Date_of_Brithday}" Grid.Column="1" Grid.Row="8" Width="Auto" Height="Auto" FontSize="40"></DatePicker>
+            <TextBox x:Name="country" Text="{Binding Country}" FontStyle="Italic"  VerticalAlignment="Center" FontSize="40" Foreground="Black" Panel.ZIndex="1" Width="Auto" Height="Auto" Grid.Row="9" Grid.Column="1" PreviewTextInput="country_PreviewTextInput" />
             <Label Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="60" Foreground="Gray" Panel.ZIndex="1" Margin="265,0,265.667,0" Height="90" Width="352" Grid.ColumnSpan="2" />
             <Label Content="Email:" HorizontalAlignment="Left" FontSize="60" Foreground="Gray" Panel.ZIndex="1" Width="Auto" Height="Auto"  Grid.Row="2"/>
             <Label Content="Выберите статус:" HorizontalAlignment="Left" FontSize="50" Foreground="Gray" Panel.ZIndex="1" Width="Auto" Height="Auto"  Grid.Row="1"/>
-            <ComboBox Name="List" Height="Auto" FontSize="40" Width="259" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" >
+            <ComboBox Name="List"  Height="Auto" FontSize="40" Width="259" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" >
                 <TextBlock>Бегун</TextBlock>
                 <TextBlock>Спонсор</TextBlock>
                 <TextBlock>Персонал</TextBlock>
+                
 
             </ComboBox>
             <Label Content="Пароль:" HorizontalAlignment="Left" FontSize="60" Foreground="Gray" Panel.ZIndex="1" Width="Auto" Height="Auto"  Grid.Row="3"/>

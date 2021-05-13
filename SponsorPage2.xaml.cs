@@ -24,5 +24,14 @@ namespace Marathone
         {
             InitializeComponent();
         }
+        int click = 0;
+        int power = 10;
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            click = click + power;
+            Summa.Content = "Внесено: " + click +" $";
+
+        }
     }
 }
